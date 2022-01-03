@@ -7,7 +7,7 @@
 
     min = 1;
     max = 8;
-    particles = 500;
+    particles = 1000;
     colors = ["64, 32, 0", "250, 64, 0", "64, 0, 0", "200, 200, 200"];
 
     rand = function(a, b) {
@@ -118,3 +118,5 @@
     setInterval(draw, 1000 / 30);
     setInterval(update, 1000 / 60);
   }).call(this);
+
+  
