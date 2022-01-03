@@ -1,84 +1,128 @@
 <html>
-    <head>
-        <style>
-            body, html, canvas{
-            width: 100%; 
-            height: 100%;  
-            margin: 0; 
-            padding: 0; 
-            
-            background: #111;
-           
-  color: white;
-  background: #222;
-  font-weight: 100;
-            }
 
-            
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,900,700italic,700,600italic,600,400italic);
+<head>
+    <style>
+        body,
+        html,
+        canvas {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            color: white;
+            /* background: #222; */
+            font-weight: 100;
+        }
+      
+/* general styling */
+:root {
+  --smaller: .75;
+}
 
-/* body {
-  font-family: 'Titillium Web', cursive;
-  width: 800px;
-  margin: 0 auto;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+
+  font-family: -apple-system, 
+    BlinkMacSystemFont, 
+    "Segoe UI", 
+    Roboto, 
+    Oxygen-Sans, 
+    Ubuntu, 
+    Cantarell, 
+    "Helvetica Neue", 
+    sans-serif;
+}
+
+.container {
+  color: #333;
+ padding-top: 15%;
+ font-size: x-large;
+    font-weight: 700;
   text-align: center;
-  color: white;
-  background: #222;
-  font-weight: 100;
-} */
+}
 
-div {
+h1 {
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+
+li {
   display: inline-block;
-  line-height: 1;
-  padding: 20px;
-  
-  font-size: 40px;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
 }
 
-span {
+li span {
   display: block;
-  font-size: 20px;
-  color: white;
+  font-size: 4.5rem;
 }
 
-#days {
-  font-size: 100px;
-  color: #db4844;
+.emoji {
+  display: none;
+  padding: 1rem;
 }
-#hours {
-  font-size: 100px;
-  color: #f07c22;
-}
-#minutes {
-  font-size: 100px;
-  color: #f6da74;
-}
-#seconds {
-  font-size: 50px;
-  color: #abcd58;
-}
-        </style>
-    </head>
-    <body>
 
-        <!-- <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267 226" class="canvas" id="template">
+.emoji span {
+  font-size: 4rem;
+  padding: 0 .5rem;
+}
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+  
+  li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+  
+  li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267 226" class="canvas" id="template">
           <path class="line" d="m55 38l167 1l-4 145l-165-6l2-140z" />
         </svg>
         
         <div id="container"></div> -->
-        <canvas id="bg" style="z-index: 1;position: absolute;">
-        </canvas>
-        <img src="./ima.png" style="position: absolute;
+    <canvas id="bg" style="z-index: 1;position: absolute;">
+    </canvas>
+    <img src="./ima.png" style="position: absolute;
 z-index: 1001;
 width: 77%;
 margin-top: 44%;
-margin-left: 11%; "/>
-<div id="timer">
-    <div id="days"></div>
-    <div id="hours"></div>
-    <div id="minutes"></div>
-    <div id="seconds"></div>
-  </div>
-        <script src="./test.js" defer></script>
-    </body>
+margin-left: 11%; " />
+    <div class="container">
+        <h1 id="headline">Countdown to GET Engage</h1>
+        <div id="countdown">
+            <ul>
+                <li><span id="days"></span>days</li>
+                <li><span id="hours"></span>Hours</li>
+                <li><span id="minutes"></span>Minutes</li>
+                <li><span id="seconds"></span>Seconds</li>
+            </ul>
+        </div>
+        <div id="content" class="emoji">
+            <span>🥳</span>
+            <span>🎉</span>
+            <span>🎂</span>
+        </div>
+    </div>
+    <script src="./test.js" defer></script>
+</body>
+
 </html>
