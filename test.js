@@ -118,25 +118,15 @@
     setInterval(draw, 1000 / 30);
     setInterval(update, 1000 / 60);
   }).call(this);
-
-
-  //for coutdown timer
-
-    //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");	
-      // var endTime = new Date("04 January 2022 08:29:00 GMT+01:00");			
-      //   endTime = (Date.parse(endTime) / 1000);
   
-
+//for count down
 
     (function () {
       const second = 1000,
             minute = second * 60,
             hour = minute * 60,
             day = hour * 24;
-    
-      //I'm adding this section so I don't have to keep updating this pen every year :-)
-      //remove this if you don't need it
-      //end
+
       const countDown = new Date("Jan 9, 2022 11:00:00").getTime(),
           x = setInterval(function() {    
             const now = new Date().getTime(),
@@ -149,7 +139,7 @@
     
             //do something later when date is reached
             if (distance < 0) {
-              document.getElementById("headline").innerText = "It's my Engagement !";
+              document.getElementById("headline").innerText = "Finally I`m ENGAGED !";
               document.getElementById("countdown").style.display = "none";
               document.getElementById("content").style.display = "block";
               clearInterval(x);
